@@ -23,6 +23,8 @@ public class MockAdapter extends RecyclerView.Adapter<MockHolder> {
         return new MockHolder(view);
     }
 
+    //bind - привязка
+    //holder - держатель
     @Override
     public void onBindViewHolder(MockHolder holder, int position) {
         holder.bind(mMockList.get(position));
@@ -33,8 +35,13 @@ public class MockAdapter extends RecyclerView.Adapter<MockHolder> {
         return mMockList.size();
     }
 
-    public void addData(List<Mock> mocks) {
+    public void addData(List<Mock> mocks, boolean refresh) {
+        //Перед добавлением новых данных, очищаем старые
+        if(refresh)
+            mMockList.clear();
+        //Добавляем новые данные
         mMockList.addAll(mocks);
+        //извещаем о изменении данных
         notifyDataSetChanged();
     }
 }

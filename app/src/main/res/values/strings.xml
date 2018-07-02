@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyAppRecyclerView</string>
+    <string name="error_text">Что-то пошло не так, попробуйте еще разю</string>
 </resources>
